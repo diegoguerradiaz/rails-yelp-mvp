@@ -8,3 +8,20 @@
 </p>
 
 <p> They serve <%= @restaurant.category %> food</p>
+
+<p>Rstaurant reviews</p>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= "#{review.rating} - #{review.content}" %></li>
+  <% end %>
+</ul>
+
+
+<p>Add your own review</p>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit 'Create a review' %>
+<% end %>
