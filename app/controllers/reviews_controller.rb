@@ -3,5 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
-  def create; end
+  def create
+    # pending action
+  end
 end
